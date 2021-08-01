@@ -1,0 +1,120 @@
+---
+slug: prettier-setup
+title: Prettier v2 setup
+description: Set up prettier for Next.js project.
+date: "2021-07-28"
+image: "/images/one-piece.jpg"
+author: JaNakh Pon
+tags:
+  - js
+---
+
+## What is Pretiier?
+
+[Prettier](https://prettier.io/docs/en/index.html) is an opinionated code formatter.
+
+### Intro
+
+We are going to use Next.js for this project. So, let get started!
+
+```shell
+  npx create-next-app demo --ts
+  cd demo
+```
+
+And, let's install prettier inside the demo `dir/`
+
+```shell
+  npm install --save-dev --save-exact prettier
+```
+
+Next, create a file named `.prettierignore` for prettier to ingore
+
+```shell
+  touch .prettierignore
+```
+
+And add the folders or files to ingore
+
+```
+node_modules
+build
+.next
+public
+```
+
+Next, create a configuration file `.prettierrc`:
+
+```shell
+  touch .prettierrc
+```
+
+And add some configurations into it. Read more about configuration [here](https://prettier.io/docs/en/configuration.html).
+
+```json
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "quoteProps": "consistent",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "avoid",
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto"
+}
+```
+
+And now, it is time to see how `prettier` works in action. Go to `pages/_app.tsx` and make changes to your code as ugly as u want 😜:
+
+<img
+  alt={`my messy code`}
+  src={`/images/messy_code.png`}
+  width={510}
+  height={272}
+/>
+
+and run:
+
+```shell
+  npx prettier --write .
+```
+
+Now, if you go to `pages/_app.tsx` again you will see that Prettier formatted your (messy ugly looking code 😝) into (prettily formatted nice looking one! 😜 ).
+
+Finally, it's time to put the finishing touches to our `set up`. Now, go to your `package.json` and add `"format": "prettier --write ."` into the `"scripts":{...}`
+
+```json
+{
+  "name": "demo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.15",
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1",
+    "prettier": "2.3.2",
+    "typescript": "4.3.5"
+  }
+}
+```
+
+Congratulations!, now you have successfully set up prettier for your Next.js project.
+
+Go [Back](/blog).

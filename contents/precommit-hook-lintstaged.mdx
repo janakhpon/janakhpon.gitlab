@@ -1,0 +1,116 @@
+---
+slug: precommit-hook-lintstaged
+title: Husky, Prettier and lint-staged
+description: Precommit hook setup with Husky v6, Prettier and lint-staged.
+date: "2021-07-29"
+author: JaNakh Pon
+tags:
+  - js
+---
+
+## What are Git Hooks?
+
+[Git hooks](https://git-scm.com/docs/githooks) are scripts that you can set up to run at certain events in the Git lifecycle. These events include different stages of a commit, like before a commit (pre-commit) and after a commit (post-commit).
+
+## What is Husky?
+
+[Husky](https://github.com/typicode/husky) is a tool that allows us to run `whatever scripts` we want at Git stages ( pre-commit, post-commit, ...).
+
+### Intro
+
+We are going to use Next.js for this project. And what we want to do is we want to lint&format our codebase using `lint-staged` and `prettier` at `pre-commit stage`. So, to do that we are going to use our [previous project](/posts/prettier-setup) that already has `prettier setup`.
+
+#### Option 1
+
+One for all setup. All we need to do is run this [script](https://prettier.io/docs/en/precommit.html) `npx mrm@2 lint-staged` inside our project root directory and it will setup Husky, Prettier and [lint-staged](https://github.com/okonet/lint-staged#configuration).
+
+Let's get started:
+
+```shell
+  cd demo
+  npx mrm@2 lint-staged
+```
+
+And now, when we go to our `demo/` directory again we will see that `the previous script` added `.husky` folder with `pre-commit` inside and our `package.json` will also have new scripts showing up:
+
+```json
+// package.json
+{
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
+```
+
+Let's check whether our pre-commit hook is working or not by adding some changes to our codebase and commit the changes:
+
+```shell
+  > git status
+  > git checkout -b your_new_branch_name
+  > git add .
+  > git commit -m "[message] - your commit messages"
+```
+
+And now, if you look( 🕵️ ) at your terminal, you will see that `precommit` hook is working! and if you go check your codebase where you had made changes to, you will see that `Prettier` has already formatted them.
+
+### Option 2 ( Just go with Option 1 already, it is easier!!! 😆)
+
+We are going to set up 'precommit' hook using another boring method 😴. Ok, now let's get started by initializing `husky` inside the demo `dir/` which already has `prettier` setup.
+
+```shell
+ npx husky-init && npm install
+```
+
+Now we have `.husky` folder inside our `demo directory` with `pre-commit` inside and our `package.json` will also have a new script:
+
+```json
+// package.json
+{
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
+```
+
+And since I am using only `pre-commit` I am not going to add (commit-msg, ...., etc) hooks but if you want to have it set up you can read more about it [here](https://typicode.github.io/husky/#/) 😉.
+
+Next, let's intall `lint-staged` and create a configuration file named `.lintstagedrc`:
+
+```shell
+  npm i -D lint-staged
+  touch .lintstagedrc
+```
+
+And add some configurations into it.
+
+```json
+{
+  "pages/**/*.{js,jsx,ts,tsx,json,css,scss,md}": ["prettier --write"],
+  "styles/**/*.{js,jsx,ts,tsx,json,css,scss,md}": ["prettier --write"]
+}
+```
+
+And now, we need to go to `.husky/pre-commit` file and replace `npm test` with `npm run pre-commit`:
+
+```shell
+#!/bin/sh
+  . "$(dirname "$0")/_/husky.sh"
+  # npm test
+  npm run pre-commit
+```
+
+Let's check whether the pre-commit hook is working or not for this set up:
+
+```shell
+  > git status
+  > git checkout -b your_new_branch_name
+  > git add .
+  > git commit -m "[message] - your commit messages"
+```
+
+Now, if you look at the terminal, you will see that the `pre-commit` hook for this setup is working just like the previous Option 1 too.
+
+Yay!!! Time to celebrate: "Congratulations🎉!, now you have successfully set up pre-commit hook for your Next.js project".
+
+Go [Back](/blog).

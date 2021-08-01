@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+  <url>
+    <loc>https://healthpackdev.cf/about</loc>
+  </url>
+
+  <url>
+    <loc>https://healthpackdev.cf/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://healthpackdev.cf</loc>
+  </url>
+
+  <url>
+    <loc>https://healthpackdev.cf/blog/ne-oldu</loc>
+  </url>
+
+  <url>
+    <loc>https://healthpackdev.cf/blog/nextjs-nedir</loc>
+  </url>
+
+  <url>
+    <loc>https://healthpackdev.cf/blog/react-ile-server-side-rendering</loc>
+  </url>
+</urlset>

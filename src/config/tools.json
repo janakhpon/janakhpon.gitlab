@@ -1,0 +1,134 @@
+{
+  "mostused": [
+    {
+      "name": "JavaScript",
+      "item": "https://www.javascript.com/"
+    },
+    {
+      "name": "Python",
+      "item": "https://www.python.org/"
+    },
+    {
+      "name": "Go",
+      "item": "https://golang.org/"
+    },
+    {
+      "name": "GraphQL",
+      "item": "https://graphql.org/"
+    },
+    {
+      "name": "REST",
+      "item": "https://en.wikipedia.org/wiki/Representational_state_transfer"
+    },
+    {
+      "name": "React",
+      "item": "https://reactjs.org/"
+    },
+    {
+      "name": "Next.js",
+      "item": "https://nextjs.org/"
+    },
+    {
+      "name": "Jupyter Notebook",
+      "item": "https://jupyter.org/"
+    },
+    {
+      "name": "Express.js",
+      "item": "https://expressjs.com/"
+    },
+    {
+      "name": "Strapi",
+      "item": "https://strapi.io/"
+    },
+    {
+      "name": "Gin-Gonic",
+      "item": "https://github.com/gin-gonic/gin"
+    },
+    {
+      "name": "Fiber",
+      "item": "https://github.com/gofiber/fiber"
+    },
+    {
+      "name": "Docker",
+      "item": "https://www.docker.com/"
+    },
+    {
+      "name": "MongoDB",
+      "item": "https://www.mongodb.com/"
+    },
+    {
+      "name": "PostgreSQL",
+      "item": "https://www.postgresql.org/"
+    },
+    {
+      "name": "Redis",
+      "item": "https://redis.io/"
+    }
+  ],
+  "rarelyused": [
+    {
+      "name": "Typescript",
+      "item": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "React Native",
+      "item": "https://reactnative.dev/"
+    },
+    {
+      "name": "Vue.js",
+      "item": "https://vuejs.org/"
+    },
+    {
+      "name": "Rust",
+      "item": "https://www.rust-lang.org/"
+    },
+    {
+      "name": "PHP",
+      "item": "https://www.php.net/"
+    },
+    {
+      "name": "Svelte",
+      "item": "https://svelte.dev/"
+    },
+    {
+      "name": "Gatsby.js",
+      "item": "https://www.gatsbyjs.com/"
+    },
+    {
+      "name": "Flask",
+      "item": "https://flask.palletsprojects.com/en/2.0.x/"
+    },
+    {
+      "name": "Nest.js",
+      "item": "https://nestjs.com/"
+    },
+    {
+      "name": "Django",
+      "item": "https://www.djangoproject.com/"
+    },
+    {
+      "name": "Electron.js",
+      "item": "https://www.electronjs.org/"
+    },
+    {
+      "name": "Java",
+      "item": "https://www.java.com/en/"
+    },
+    {
+      "name": "Rocket",
+      "item": "https://rocket.rs/"
+    },
+    {
+      "name": "ActixWeb",
+      "item": "https://actix.rs/"
+    },
+    {
+      "name": "gRPC",
+      "item": "https://grpc.io/"
+    },
+    {
+      "name": "WebSocket",
+      "item": "https://en.wikipedia.org/wiki/WebSocket#:~:text=WebSocket%20is%20a%20computer%20communications,WebSocket%20is%20distinct%20from%20HTTP."
+    }
+  ]
+}
